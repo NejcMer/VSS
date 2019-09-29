@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Seminarska.Models.zivali>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Deblo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Razred)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Red)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Druzina)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vrsta)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Deblo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Razred)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Red)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Druzina)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vrsta)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
